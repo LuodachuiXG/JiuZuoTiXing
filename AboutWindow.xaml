@@ -1,0 +1,85 @@
+﻿<hc:Window x:Class="JiuZuoTiXing.AboutWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:local="clr-namespace:JiuZuoTiXing"
+           mc:Ignorable="d"
+           xmlns:hc="https://handyorg.github.io/handycontrol"
+           Title="AboutWindow" Height="380" Width="300"
+           ResizeMode="NoResize"
+           Background="White"
+           WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <hc:Gravatar 
+            Style="{StaticResource GravatarCircleImg}"
+            Grid.Row="0" 
+            Grid.Column="0"
+            Margin="30"
+            Width="110"
+            Height="110">
+            <Image 
+                Source="./Resources/JiuZuoTiXingPng.png"
+                Width="124"
+                Height="124"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            </Image>
+        </hc:Gravatar>
+
+        <TextBlock 
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5, 0, 5, 0" 
+            Text="久坐提醒" 
+            Style="{StaticResource TextBlockLarge}"/>
+        <TextBlock 
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="0" 
+            Text="JiuZuoTiXing" 
+            FontStyle="Italic"
+            Style="{StaticResource TextBlockDefaultThiLight}"/>
+        <TextBlock 
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="5, 0 ,5, 40" 
+            Text="V2.0   .Net6.0" 
+            Style="{StaticResource TextBlockDefaultThiLight}"/>
+        <TextBlock 
+            Grid.Row="4"
+            Grid.Column="0"
+            Margin="0" 
+            Text="Email: i@liili.li" 
+            Style="{StaticResource TextBlockDefaultInfo}"/>
+        <TextBlock 
+            Grid.Row="5"
+            Grid.Column="0"
+            Margin="0" 
+            Text="UI By HandyControl" 
+            Style="{StaticResource TextBlockDefaultInfo}"
+            Cursor="Hand"
+            MouseLeftButtonDown="OnHandyClick"/>
+        <TextBlock 
+            Grid.Row="6"
+            Grid.Column="0"
+            Margin="0" 
+            Text="Copyright © Luodachui.cn 2021-2022" 
+            Style="{StaticResource TextBlockDefaultThiLight}"
+            Cursor="Hand"
+            MouseLeftButtonDown="OnCopyRightClick"/>
+    </Grid>
+</hc:Window>

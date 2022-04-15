@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>Resources\JiuZuoTiXingIco.ico</ApplicationIcon>
+        <AssemblyName>久坐提醒</AssemblyName>
+        <PackageVersion>2.0.0</PackageVersion>
+        <Authors>我不是罗大锤</Authors>
+        <Description>一个可以提醒你不要久坐的软件</Description>
+        <Copyright>我不是罗大锤</Copyright>
+        <PackageProjectUrl>https://app.luodachui.cn/#jiuzuotixing</PackageProjectUrl>
+        <Company>我不是罗大锤</Company>
+        <Product>久坐提醒</Product>
+        <AssemblyVersion>2.0.0</AssemblyVersion>
+        <NeutralLanguage>zh-CN</NeutralLanguage>
+        <FileVersion>2.0.0</FileVersion>
+        <Version>2.0.0</Version>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HandyControl" Version="3.3.0" />
+      <PackageReference Include="HandyControls.Lang.zh-CN" Version="3.3.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\jiuzuotixing.ico" />
+      <None Remove="Resources\JiuZuoTiXingIco.ico" />
+      <None Remove="Assets\jiuzuotixing.png" />
+      <Resource Include="Resources\JiuZuoTiXingPng.png" />
+      <Resource Include="Resources\JiuZuoTiXingIco.ico">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Properties\Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Properties\Settings.Designer.cs">
+        <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Settings.settings</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Properties\Resources.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Properties\Settings.settings">
+        <Generator>SettingsSingleFileGenerator</Generator>
+        <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      </None>
+    </ItemGroup>
+
+</Project>

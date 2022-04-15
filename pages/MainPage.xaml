@@ -1,0 +1,67 @@
+﻿<Page x:Class="JiuZuoTiXing.pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:JiuZuoTiXing.pages"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      mc:Ignorable="d"
+      Title="MainPage" Height="Auto" Width="Auto" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <hc:TransitioningContentControl 
+            Grid.Row="0" 
+            TransitionMode="Right2Left" 
+            Margin="6">
+            <hc:ComboBox 
+                x:Name="CbReminderTime" 
+                SelectedIndex="6" 
+                hc:TitleElement.Title="提醒时间（分钟）"
+                Width="340" />
+        </hc:TransitioningContentControl>
+        
+        <hc:TransitioningContentControl 
+            Grid.Row="1" 
+            TransitionMode="Left2Right" 
+            Margin="6">
+            <hc:ComboBox 
+                x:Name="CbStopReminderTime" 
+                SelectedIndex="3" 
+                hc:TitleElement.Title="鼠标无操作重置计时（分钟）"
+                Width="340"/>
+        </hc:TransitioningContentControl>
+        
+        <hc:TransitioningContentControl 
+            Grid.Row="2" 
+            TransitionMode="Right2Left" 
+            Margin="6">
+            <hc:ComboBox 
+                x:Name="CbReminderMode" 
+                SelectedIndex="0" 
+                hc:TitleElement.Title="通知方式" 
+                Width="340" />
+        </hc:TransitioningContentControl>
+        
+        <hc:TransitioningContentControl 
+            Grid.Row="3" 
+            TransitionMode="Left2Right" 
+            Margin="6,30,6,30" >
+            <Button Grid.Row="3" 
+                    x:Name="BtnStart"
+                    Style="{StaticResource ButtonPrimary}" 
+                    Content="执行操作" 
+                    Width="340" 
+                    Click="BtnStart_OnClick"/>
+        </hc:TransitioningContentControl>
+        
+    </Grid>
+</Page>
