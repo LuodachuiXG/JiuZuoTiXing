@@ -8,7 +8,7 @@ C#和WPF我都没有系统学习过，所以有的功能可能实现的并不专
 
 ### ❤使用的框架及架构
 
-- [HandyControl]([HandyOrg](https://handyorg.github.io/))
+- [HandyControl](https://handyorg.github.io/)
 
 - WPF
 
