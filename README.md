@@ -18,7 +18,7 @@ C#和WPF我都没有系统学习过，所以有的功能可能实现的并不专
 
 ### 🧁使用说明
 
-依赖 .NET 6.0，点击下载[.NET 6.0 Desktop Runtime]([下载 .NET 6.0 Desktop Runtime (v6.0.4) - Windows x64 Installer (microsoft.com)](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer))
+依赖 .NET 6.0，点击下载[.NET 6.0 Desktop Runtime](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer)
 
 
 
