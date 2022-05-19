@@ -19,17 +19,17 @@ namespace JiuZuoTiXing
     public partial class MainWindow : Window
     {
         public readonly IniUtil Ini = Common.GetIniUtil();
-        
+
         public readonly string[] ReminderTimeItems = { "30", "35", "40", "45", "50", "55", "60", "70", "80", "90", "100" };
         public readonly string[] StopReminderTimeItems = { "1", "2", "3", "5", "10", "15", "20", "30", "40", "50" };
         public readonly string[] ComboBoxItemsItems = { "软件通知（推荐）", "系统通知" };
-        
+
         // 提醒时间和鼠标无操作重置时间的分钟和秒
         private int _reminderMinute = 0;
         private int _stopReminderMinute = 0;
         private int _reminderSecond = 0;
         private int _stopReminderSecond = 0;
-        
+
         // 提醒时间 / 无操作时间 / 通知模式 的 ComboBox 选中 Index
         private int _reminderTimeSelectIndex = 6;
         private int _stopReminderTimeSelectIndex = 3;
@@ -37,11 +37,12 @@ namespace JiuZuoTiXing
 
         // MainPage 是否自动执行标识
         private bool _autoStart = false;
-        
-        
+
+
         // 通知方式 (0 == 软件通知，1 == 系统通知)
         private int _reminderMode = 0;
-        
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace JiuZuoTiXing
             {
                 Directory.CreateDirectory(Common.Path);
             }
-            
+
             // 判断配置文件中的提醒时间等参数是否正确
             var reminderTime = Convert.ToInt32(Ini.ReadString(Common.NodeMain, Common.MainReminderTime, "6"));
             var stopReminderTime = Convert.ToInt32(Ini.ReadString(Common.NodeMain, Common.MainStopReminderTime, "3"));
@@ -78,7 +79,7 @@ namespace JiuZuoTiXing
                 _stopReminderTimeSelectIndex = stopReminderTime;
                 _reminderModeSelectIndex = reminderMode;
             }
-        
+
             // 判断是否启用了开机自启
             var autoStart = Ini.ReadString(Common.NodeMain, Common.MainAutoStart, "N");
             if (autoStart.Equals("Y"))
@@ -90,8 +91,12 @@ namespace JiuZuoTiXing
                 _stopReminderSecond = _stopReminderMinute * 60;
                 _reminderMode = _reminderModeSelectIndex;
                 NavigateToTimingPage();
+
                 WindowState = WindowState.Minimized;
                 ShowInTaskbar = false;
+
+
+
                 Growl.SuccessGlobal("久坐提醒已自动最小化运行");
             }
             else
@@ -100,6 +105,7 @@ namespace JiuZuoTiXing
                 NavigateToMainPage();
             }
         }
+
 
         /**
          * 设置提醒时间和无操作重置时间变量
@@ -119,7 +125,7 @@ namespace JiuZuoTiXing
         {
             return _reminderSecond;
         }
-        
+
         /**
          * 获取提醒时间的 ComboBox 选项 Index
          */
@@ -127,7 +133,7 @@ namespace JiuZuoTiXing
         {
             return _reminderTimeSelectIndex;
         }
-        
+
         /**
          * 设置提醒时间的 ComboBox 选项 Index
          */
@@ -135,7 +141,7 @@ namespace JiuZuoTiXing
         {
             _reminderTimeSelectIndex = index;
         }
-        
+
         /**
          * 获取无操作时间（秒）
          */
@@ -143,7 +149,7 @@ namespace JiuZuoTiXing
         {
             return _stopReminderSecond;
         }
-        
+
         /**
          * 获取无操作时间的 ComboBox 选项 Index
          */
@@ -151,7 +157,7 @@ namespace JiuZuoTiXing
         {
             return _stopReminderTimeSelectIndex;
         }
-        
+
         /**
          * 设置提醒时间的 ComboBox 选项 Index
          */
@@ -175,7 +181,7 @@ namespace JiuZuoTiXing
         {
             return _reminderMode;
         }
-        
+
         /**
          * 获取通知方式的 ComboBox 选项 Index
          */
@@ -183,7 +189,7 @@ namespace JiuZuoTiXing
         {
             return _reminderModeSelectIndex;
         }
-        
+
         /**
          * 设置通知方式的 ComboBox 选项 Index
          */
@@ -214,7 +220,7 @@ namespace JiuZuoTiXing
             Title = "久坐提醒";
             MainWindowFrame.Navigate(new MainPage(this));
         }
-        
+
         /**
          * Frame 跳转到 TimingPage 页面
          */
@@ -240,7 +246,7 @@ namespace JiuZuoTiXing
         {
             cancelEventArgs.Cancel = true;
             var closeMode = Ini.ReadString(Common.NodeClose, Common.CloseMode, "");
-            
+
             // 判断配置文件中是否有关闭窗口的配置文件，或配置参数是否错误。此判断一般在第一次使用软件时才会触发。
             if (closeMode.Length == 0 ||
                 (!closeMode.Equals(Common.CloseFinish) && !closeMode.Equals(Common.CloseMinimize)))
@@ -257,15 +263,15 @@ namespace JiuZuoTiXing
                     }
                     else
                     {
-                       // 将关闭窗口的模式改为直接关闭程序，并关闭程序
-                       Ini.WriteString(Common.NodeClose, Common.CloseMode, Common.CloseFinish);
-                       Application.Current.Shutdown();
+                        // 将关闭窗口的模式改为直接关闭程序，并关闭程序
+                        Ini.WriteString(Common.NodeClose, Common.CloseMode, Common.CloseFinish);
+                        Application.Current.Shutdown();
                     }
                     return true;
                 });
                 return;
             }
-            
+
             // 判断当前的关闭模式是最小化到托盘还是关闭程序
             if (closeMode.Equals(Common.CloseMinimize))
             {
@@ -293,7 +299,7 @@ namespace JiuZuoTiXing
         {
             new AboutWindow().Show();
         }
-        
+
         /**
          * MenuItem “检查更新” 选项点击事件
          */
@@ -301,6 +307,6 @@ namespace JiuZuoTiXing
         {
             Tool.OpenUrl("https://app.luodachui.cn/#jiuzuotixing");
         }
-        
+
     }
 }

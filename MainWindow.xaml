@@ -25,8 +25,7 @@
                         <hc:NotifyIcon Grid.Row="0" 
                                        x:Name="NotifyIcon"
                                        Token="JiuZuoTiXing"
-                                       Text="久坐提醒"
-                                       Visibility="Visible" 
+                                       Text="久坐提醒" 
                                        Icon="Resources/JiuZuoTiXingIco.ico"
                                        Click="OnNotifyIconClick">
                                 <hc:NotifyIcon.ContextMenu>

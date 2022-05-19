@@ -1,39 +1,38 @@
-# JiuZuoTiXing
+# 🍻久坐提醒
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+一个可以提醒你久坐的程序，也是我写的第一个WPF程序。
 
-#### 软件架构
-软件架构说明
+C#和WPF我都没有系统学习过，所以有的功能可能实现的并不专业😱
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+### ❤使用的框架及架构
 
-#### 使用说明
+- [HandyControl]([HandyOrg](https://handyorg.github.io/))
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- WPF
 
-#### 参与贡献
+- [.NET 6.0](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer)
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+  
+
+### 🧁使用说明
+
+依赖 .NET 6.0，点击下载[.NET 6.0 Desktop Runtime]([下载 .NET 6.0 Desktop Runtime (v6.0.4) - Windows x64 Installer (microsoft.com)](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.4-windows-x64-installer))
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### 🎃已知BUG
+
+1. 设置开机自启后关闭设置窗口会闪退；
+   - 暂时解决方法：管理员权限启动程序
+2. 随电脑开机启动后左下角会显示最小化的窗口；
+   - 暂时解决方法：点击托盘图标再关闭窗口
+
+
+
+### 📣截图
+
+![jiuzuotixing_1](https://ldc-1251523367.cos.ap-beijing.myqcloud.com/luodachui/jiuzuotixing_1.png)
+
+![jiuzuotixing_2](https://ldc-1251523367.cos.ap-beijing.myqcloud.com/luodachui/jiuzuotixing_2.png)
