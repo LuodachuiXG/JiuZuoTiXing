@@ -31,7 +31,7 @@
         
         <hc:TransitioningContentControl 
             Grid.Row="1" 
-            TransitionMode="Left2Right" 
+            TransitionMode="Right2Left" 
             Margin="6">
             <hc:ComboBox 
                 x:Name="CbStopReminderTime" 
@@ -53,7 +53,7 @@
         
         <hc:TransitioningContentControl 
             Grid.Row="3" 
-            TransitionMode="Left2Right" 
+            TransitionMode="Right2Left" 
             Margin="6,30,6,30" >
             <Button Grid.Row="3" 
                     x:Name="BtnStart"

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Windows;
-using System.Windows.Navigation;
 using HandyControl.Controls;
-using HandyControl.Tools.Extension;
 using JiuZuoTiXing.pages;
 using JiuZuoTiXing.util;
 using MessageBox = HandyControl.Controls.MessageBox;
 using Window = HandyControl.Controls.Window;
+using NotifyIcon = System.Windows.Forms.NotifyIcon;
+using System.Drawing;
 
 namespace JiuZuoTiXing
 {
@@ -94,8 +93,8 @@ namespace JiuZuoTiXing
 
                 WindowState = WindowState.Minimized;
                 ShowInTaskbar = false;
-
-
+                //this.Hide();
+                ShowInTaskbar = false;
 
                 Growl.SuccessGlobal("久坐提醒已自动最小化运行");
             }
@@ -231,15 +230,6 @@ namespace JiuZuoTiXing
 
 
         /**
-         * 托盘图标单击/托盘菜单显示程序单击 事件
-         */
-        private void OnNotifyIconClick(object sender, RoutedEventArgs routedEventArgs)
-        {
-            WindowState = WindowState.Normal;
-            ShowInTaskbar = true;
-        }
-
-        /**
          * MainWindows 窗口关闭事件
          */
         private void OnWindowClosing(object? sender, CancelEventArgs cancelEventArgs)
@@ -258,7 +248,8 @@ namespace JiuZuoTiXing
                     {
                         // 将关闭窗口的模式改为最小化
                         Ini.WriteString(Common.NodeClose, Common.CloseMode, Common.CloseMinimize);
-                        WindowState = WindowState.Minimized;
+                        //WindowState = WindowState.Minimized;
+                        this.Hide();
                         ShowInTaskbar = false;
                     }
                     else
@@ -307,6 +298,16 @@ namespace JiuZuoTiXing
         {
             Tool.OpenUrl("https://app.luodachui.cn/#jiuzuotixing");
         }
+
+        /**
+         * 托盘图标单击/托盘菜单显示程序单击 事件
+         */
+        private void OnNotifyIconClick(object sender, RoutedEventArgs routedEventArgs)
+        {
+            WindowState = WindowState.Normal;
+            ShowInTaskbar = true;
+        }
+
 
     }
 }

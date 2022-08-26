@@ -16,8 +16,8 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+     
         <hc:TransitioningContentControl 
             Grid.Row="0" 
             Grid.Column="0" 

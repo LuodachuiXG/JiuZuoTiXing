@@ -11,53 +11,57 @@
            WindowStartupLocation="CenterScreen"
            Background="White"
            Closing="OnWindowClosing">
-    
-        <Grid>
-                <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Row="1" Grid.Column="0">
-                        <hc:NotifyIcon Grid.Row="0" 
-                                       x:Name="NotifyIcon"
-                                       Token="JiuZuoTiXing"
-                                       Text="久坐提醒" 
-                                       Icon="Resources/JiuZuoTiXingIco.ico"
-                                       Click="OnNotifyIconClick">
-                                <hc:NotifyIcon.ContextMenu>
-                                        <ContextMenu>
-                                                <MenuItem 
-                                                        Header="显示程序"
-                                                        Click="OnNotifyIconClick">
-                                                </MenuItem>
-                                                <MenuItem 
-                                                        Header="设置" 
-                                                        Click="OnSettingItemClick">
-                                                </MenuItem>
-                                                <MenuItem 
-                                                        Header="退出程序" 
-                                                        Command="hc:ControlCommands.ShutdownApp">
-                                                </MenuItem>
-                                        </ContextMenu>
-                                </hc:NotifyIcon.ContextMenu>
-                        </hc:NotifyIcon>
-                        <Menu>
-                                <MenuItem Header="功能">
-                                        <MenuItem Header="设置" Click="OnSettingItemClick"></MenuItem>
-                                        <MenuItem Header="检查更新" Click="OnCheckUpdateItemClick"></MenuItem>
-                                        <MenuItem Header="关于" Click="OnAboutItemClick"></MenuItem>
-                                </MenuItem>
-                        </Menu>
-                </StackPanel>
-                
-                <Frame 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--<hc:NotifyIcon Grid.Row="0" 
+                x:Name="NotifyIcon"
+                Token="JiuZuoTiXing"
+                Text="久坐提醒" 
+                Icon="./Resources/JiuZuoTiXingIco.ico"
+                Click="OnNotifyIconClick">
+            <hc:NotifyIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem 
+                            Header="显示程序"
+                            Click="OnNotifyIconClick">
+                    </MenuItem>
+                    <MenuItem 
+                            Header="设置" 
+                            Click="OnSettingItemClick">
+                    </MenuItem>
+                    <MenuItem 
+                            Header="退出程序" 
+                            Command="hc:ControlCommands.ShutdownApp">
+                    </MenuItem>
+                </ContextMenu>
+            </hc:NotifyIcon.ContextMenu>
+        </hc:NotifyIcon>-->
+
+
+
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Menu>
+                <MenuItem Header="功能">
+                    <MenuItem Header="设置" Click="OnSettingItemClick"></MenuItem>
+                    <MenuItem Header="检查更新" Click="OnCheckUpdateItemClick"></MenuItem>
+                    <MenuItem Header="关于" Click="OnAboutItemClick"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+
+        <Frame 
                        x:Name="MainWindowFrame" 
                        Grid.Row="1" Grid.Column="0" 
                        NavigationUIVisibility="Hidden"/>
-        </Grid>
-    
+    </Grid>
+
 </hc:Window>
